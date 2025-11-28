@@ -1,40 +1,38 @@
-#!/bin/bash
-# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
-# AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
-# License: GNU General Public License v3.0
+		#!/bin/bash
+		# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+		# AUTHOR: Luca Garofalo (Lucksi)
+    	# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+    	# License: GNU General Public License v3.0
 
-BLUE=$(tput setaf 6)
-GREEN=$(tput setaf 2)
-WHITE=$(tput setaf 15)
-LIGHTGREEN=$(tput setaf 10)
+    	BLUE=$(tput setaf 6)
+    	GREEN=$(tput setaf 2)
+    	WHITE=$(tput setaf 15)
+    	LIGHTGREEN=$(tput setaf 10)
+    	function banner 
+		clear
+		reader=$(<"Banners/Banner3.txt")
+		echo "${GREEN}$reader"
+    	function Packet Installer 
+		proot -0 pkg install git -y &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
+		proot -0 pkg install python3 -y &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
+    	proot -0 pkg install python3-pip -y &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
+		proot -0 pkg install whois -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
+    	proot -0 pkg install tracepath -y &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
+    	proot -0 pkg install php -y &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
+		proot -0 pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
+	    printf "$GREEN}\n\n[+]$WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]}"
 
-function banner {
-	clear
-	reader=$(<"Banners/Banner3.txt")
-	echo "${GREEN}$reader"
-}
-
-function Packet_Installer {
-	proot -0 pkg install git -y &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
-	proot -0 pkg install python3 -y &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
-    proot -0 pkg install python3-pip -y &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
-	proot -0 pkg install whois -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
-    proot -0 pkg install tracepath -y &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
-    proot -0 pkg install php -y &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
-	proot -0 pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
-	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
-}
-
-function Options {
-	printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)NO\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
-	while [ "$Opt" = "" ];
+        "function" Options 
+	    printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)NO\n\n"
+	    read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
+	    while  "$Opt" != 1 ] && [ "$Opt" != 2 ]
 		do
         printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)(NO)\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
-	done
-	if [ $Opt == 1 ];
+	    done
+	    $Opt == 1  $Opt == 2 ;
+	    if  $Opt 1 ;
+
 		then
 		status="Enabled"
 		printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
@@ -72,7 +70,7 @@ function Options {
 			printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT \n\n"
 			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
 		done
-	elif [ $Opt == 2 ];
+		elif [ $Opt == 2 ];
 		then
 		printf "${GREEN}\n[+]${WHITE}SKIPPING..."
 		status="Disabled"
@@ -81,20 +79,20 @@ function Options {
 		destination="None"
 		server="None"
 		port="None"
-	else
+		else
 		Options
-	fi
-	printf "\n"
-	printf "${WHITE}\nINSERT YOUR UPDATE-PASSWORD\n\n"
-	read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" up_pass
-	while [ "$up_pass" = "" ];
+		fi
+		printf "\n"
+		printf "${WHITE}\nINSERT YOUR UPDATE-PASSWORD\n\n"
+		read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" up_pass
+		while [ "$up_pass" = "" ];
 		do
         printf "${WHITE}\nINSERT YOUR UPDATE-PASSWORD \n\n"
         read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" up_pass
-	done
-	printf "${WHITE}\n\nINSERT YOUR WHO-IS-XMLAPI-KEY(LEAVE EMPTY IF YOU HAVENT ONE)\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" key
-	if [ "$key" == "" ];
+		done
+		printf "${WHITE}\n\nINSERT YOUR WHO-IS-XMLAPI-KEY(LEAVE EMPTY IF YOU HAVENT ONE)\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" key
+		if [ "$key" == "" ];
 		then
 		key="None"
 	fi
@@ -109,10 +107,10 @@ function Options {
 	if [ "$useragent" == "" ];
 		then
 		useragent="Useragents/Useragent.txt"
-	fi
-	printf "${WHITE}\n\nWOULD YOU LIKE TO SAVE YOUR LOG SESSIONS(1)YES(2)NO\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Logs
-	if [ $Logs == 2 ];
+		fi
+		printf "${WHITE}\n\nWOULD YOU LIKE TO SAVE YOUR LOG SESSIONS(1)YES(2)NO\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Logs
+		if [ $Logs == 2 ];
 		then
 		Logs="False"
 	elif [ $Logs == 1 ];
@@ -187,10 +185,20 @@ function Options {
 	echo "show_logs = $Logs">>Configuration.ini
 	echo "language"= "$Lang">>Configuration.ini
 	echo "date_format"= "$Date">>Configuration.ini
-	rm UNTILED.txt &> /dev/null
-}
+	rm UNTILED.txt &> /dev/nul
+	printf "\n\n${WHITE}EMAIL-SERVER:${GREEN}$status\n"
+	printf "\n${WHITE}SHOW-LOGS:${GREEN}$Logs\n"
+	printf "\n${WHITE}UPDATE-PASSWORD:${GREEN}$up_pass\n"
+	printf "\n${WHITE}API-KEY:${GREEN}$key\n"
+	printf "\n${WHITE}PROXIES:${GREEN}$proxies\n"
+	printf "\n${WHITE}USERAGENTS:${GREEN}$useragent\n"
+	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}$mode\n"
+	printf "\n${WHITE}DATA-FORMAT:${GREEN}$mode"
+	cd ../
 
-function AutoInstaller {
+
+
+    function AutoInstaller
 	printf "${GREEN}\n[+]${WHITE}AUTO-INSTALLER MODE...\n"
 	Packet_Installer
 	sleep 5
@@ -224,22 +232,22 @@ function AutoInstaller {
 	printf "\n${WHITE}USERAGENTS:${GREEN}DEFAULT\n"
 	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH\n"
 	printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
-}
 
 
-function installer {
-	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
-	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
-	if [ $confvar == 1 ];
-		then 
-		printf "${BLUE}\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
-		read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
-		while [ "$selected" == "" ];
+
+			function installer 
+			rintf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
+			read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
+			if [ $confvar == 1 ];
+			then 
+			printf "${BLUE}\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
+			read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
+			while [ "$selected" == "" ];
 			do
 			printf "${BLUE}\n\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
 			read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
-		done
-		if [ $selected == 1 ];
+			done
+			if [ $selected == 1 ];
 			then 
 			Packet_Installer
 			Mail_Options
@@ -266,9 +274,73 @@ function installer {
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
 		exit 0
-	fi
-	printf "\n${BLUE}INSTALLATION INTERRUPTED EXIT...\n\n"
+		fi
+		printf "\n${BLUE}INSTALLATION INTERRUPTED EXIT...\n\n"
     	exit 1
-}
-banner
-installer
+
+		banner
+		installer
+	
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"	
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"	
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		"printf" $WHITEDATAFORMAT$GREENEUROPE EU
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+		printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+		printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH"
+
+
+		
+
+

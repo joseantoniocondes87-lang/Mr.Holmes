@@ -1,5 +1,30 @@
-{
-            "Color":{
-                "Background": "Light"
-            }
-    }
+
+        
+
+    "name": "Dark Mode",
+    "author": "Mr.Holmes",  
+    "version": "1.0",
+    "description": "A sleek dark theme for Mr.Holmes GUI.",
+    "colors": 
+    "background": "#121212",
+    "foreground": "#E0E0E0",
+    "button": "#1F1F1F",
+    "buttonText": "#FFFFFF",
+    "highlight": "#BB86FC",
+    "text": "#E0E0E0"
+    
+       
+
+
+
+
+
+    
+
+    
+
+
+
+
+
+

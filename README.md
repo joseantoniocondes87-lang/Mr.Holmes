@@ -1,8 +1,8 @@
-<p align="center">
+p align="center">
   <img width="650px" height="100px" src="Icon/Banner.png">
 </p>
 
-<p align = "center">
+p align = "center">
   <img src = "https://img.shields.io/github/stars/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/github/forks/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/badge/Maintained%3F-yes-green.svg">
@@ -26,7 +26,7 @@
 
 <br>
 
-<p align = "center">
+p align = "center">
 <img src = "Screenshot/Termux.png" height = "400px" width = "300px">
 </p>
 
@@ -75,7 +75,7 @@ Install.cmd
 ```
 <br>
 
-# :heavy_check_mark: INSTALLATION TERMUX:
+#:heavy_check_mark: INSTALLATION TERMUX:
 ```bash
 pkg install proot
 git clone https://github.com/Lucksi/Mr.Holmes
@@ -265,7 +265,10 @@ edit Language.json
 
 # EXAMPLE:
 
-![Screenshot](Screenshot/Graph_Test.png)
+!ScreenshotScreenshot/Graph_Test png
+
+
+
 
 <br>
 
@@ -287,9 +290,12 @@ edit Language.json
 
 # EXAMPLE (1):
 
-![Screenshot](Screenshot/Dorks.png)
+Screenshot Screenshot Dorks.png
 
-<br>
+
+
+br
+
 
 # EXAMPLE (2):
 
